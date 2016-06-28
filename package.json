@@ -1,0 +1,27 @@
+{
+    "name": "option.ts",
+    "version": "1.0.0",
+    "description": "Option type for TypeScript. Borrowed from [scala's Option](http://www.scala-lang.org/api/2.7.4/scala/Option.html).",
+    "main": "lib.ts",
+    "scripts": {
+        "test": "./node_modules/.bin/tsc example.ts && node example.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alexander-matsievsky/option.ts.git"
+    },
+    "keywords": [
+        "functional",
+        "option",
+        "typescript"
+    ],
+    "author": "Alexander Matsievsky <alexander.matsievsky@gmx.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/alexander-matsievsky/option.ts/issues"
+    },
+    "homepage": "https://github.com/alexander-matsievsky/option.ts#readme",
+    "devDependencies": {
+        "typescript": "^2.0.0-dev.20160628"
+    }
+}

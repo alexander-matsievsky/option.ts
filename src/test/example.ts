@@ -125,23 +125,27 @@ const data:{
     }
 }];
 
-let compose =
-        <A, B, C>(f:(b:B) => C, g:(a:A) => B) => (a:A):C =>
-            f(g(a)),
-    search =
-        (query:string[]):string => {
-            let search =
-                    query.reduce((g, key) => {
-                        return compose(o => o.flatMap((data:{[key:string]:Object}) => Option(data[key])), g);
-                    }, Option),
-                found =
-                    data.map(search);
-            return `
+function compose<A, B, C>(f:(b:B) => C, g:(a:A) => B):((a:A) => C) {
+    return a => f(g(a));
+}
+
+function search(query:string[]):string {
+    const search =
+        query.reduce((f, key) => (
+            compose(o => (
+                o.flatMap((data:{[key:string]:Object}) =>
+                    Option(data[key])
+                )
+            ), f)
+        ), Option);
+    const found =
+        data.map(search);
+    return `
 query: ${query.join(".")}
 found:\n
 ${found.map((_, i) => ` -- ${i}: ${_}`).join("\n")}
 `;
-        };
+}
 
 console.log(search(["name", "last"]));
 console.log(search(["address", "country", "city", "name"]));

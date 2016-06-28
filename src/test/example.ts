@@ -1,4 +1,4 @@
-import {Option} from "./lib";
+import {Option} from "../main/lib";
 
 const data:{
     name?:{

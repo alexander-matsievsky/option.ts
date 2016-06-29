@@ -2,7 +2,7 @@
     "name": "option.ts",
     "version": "1.0.0",
     "description": "Option type for TypeScript. Borrowed from [scala's Option](http://www.scala-lang.org/api/2.7.4/scala/Option.html).",
-    "main": "src/main/lib.ts",
+    "main": "index.ts",
     "scripts": {
         "test": "./node_modules/.bin/tsc src/test/example.ts && node src/test/example.js",
         "postinstall": "cp src/main/lib.ts index.ts"

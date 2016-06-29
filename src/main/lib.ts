@@ -1,5 +1,3 @@
-// todo: find out why the typeguards do not work.
-
 abstract class $Option<A> {
     isDefined():this is Some<A> {
         return this instanceof $Some;
@@ -10,11 +8,11 @@ abstract class $Option<A> {
     }
 
     flatMap<B>(f:(a:A) => Option<B>):Option<B> {
-        return this.isDefined() ? f((this as any).unwrap()) : None;
+        return this.isDefined() ? f(this.unwrap()) : None;
     }
 
     getOrElse(a:A):A {
-        return this.isDefined() ? (this as any).unwrap() : a;
+        return this.isDefined() ? this.unwrap() : a;
     }
 
     orElse(o:Option<A>):Option<A> {

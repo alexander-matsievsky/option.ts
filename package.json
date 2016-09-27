@@ -1,5 +1,5 @@
 {
-    "name": "option.ts",
+    "name": "option_ts",
     "version": "1.0.0",
     "description": "Option type for TypeScript. Borrowed from [scala's Option](http://www.scala-lang.org/api/2.7.4/scala/Option.html).",
     "main": "index.ts",
